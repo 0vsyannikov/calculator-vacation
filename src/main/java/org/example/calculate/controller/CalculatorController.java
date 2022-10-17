@@ -15,6 +15,9 @@ public class CalculatorController {
 
     @PostMapping(value = "/vacationPay")
     public Object calculateVacationPay(@RequestBody VacationPayRq request) {
+        if(request == null){
+            return null;
+        }
         return calculatorService.calculateVacationPay(request.getSalary(), request.getNumberOfVacationDays());
     }
 }

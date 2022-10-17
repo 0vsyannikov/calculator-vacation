@@ -12,6 +12,9 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     @Override
     public BigDecimal calculateVacationPay(BigDecimal salary, int numberVacationDays) {
+        if (salary == null) {
+            return null;
+        }
         return salary.divide(MONTH_IN_YEAR, RoundingMode.HALF_EVEN)
                 .divide(VACATION_PAY_RATIO, RoundingMode.HALF_EVEN)
                 .multiply(BigDecimal.valueOf(numberVacationDays))
