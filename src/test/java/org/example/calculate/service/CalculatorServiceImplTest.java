@@ -23,5 +23,4 @@ class CalculatorServiceImplTest {
         //then
         assertEquals(BigDecimal.valueOf(11940).setScale(2, RoundingMode.HALF_EVEN), actualResult);
     }
-
 }
